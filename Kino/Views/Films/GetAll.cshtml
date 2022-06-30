@@ -4,7 +4,6 @@
     Layout = "_Layout";
 }
 
-<div class="table-responsive">
     <table class="table table-bordered mb-3">
         <a asp-controller="Films" asp-action="Create" class="btn btn-primary btn-block mb-3 mr-1">Добавить фильм</a>
         <thead>
@@ -26,7 +25,7 @@
                 <td>@film.Name</td>
                 <td>@film.Duration</td>
                 <td>@film.Trailer</td>
-                <td>@film.CreateDate</td>
+                <td>@film.CreateDate.Date.ToString("yyyy MM dd").</td>
                 <td class="text-center">
                     <span class="badge badge-success">@film.GenreName</span>
                 </td>
@@ -46,4 +45,3 @@
         }
         </tbody>
     </table>
-</div>

@@ -17,6 +17,13 @@
     <ItemGroup>
       <_ContentIncludedByDefault Remove="Pages\Films\Create.cshtml" />
       <_ContentIncludedByDefault Remove="Pages\Films\Update.cshtml" />
+      <_ContentIncludedByDefault Remove="wwwroot\images\film\637921172255676612Screenshot from 2022-06-29 09-25-58.png" />
+      <_ContentIncludedByDefault Remove="wwwroot\images\film\637921199229598125Screenshot from 2022-06-29 09-25-58.png" />
+      <_ContentIncludedByDefault Remove="wwwroot\images\film\637921204287856130Screenshot from 2022-06-29 10-00-07.png" />
+      <_ContentIncludedByDefault Remove="wwwroot\images\film\637921204687051582Screenshot from 2022-06-29 10-00-07.png" />
+      <_ContentIncludedByDefault Remove="wwwroot\images\film\637921206032604452Screenshot from 2022-06-29 09-25-58.png" />
+      <_ContentIncludedByDefault Remove="wwwroot\images\film\637921236127963047Screenshot from 2022-06-29 10-00-07.png" />
+      <_ContentIncludedByDefault Remove="wwwroot\images\film\637921802165517910photo_2022-06-02_11-15-50.jpg" />
     </ItemGroup>
 
 </Project>

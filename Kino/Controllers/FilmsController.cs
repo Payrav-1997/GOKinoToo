@@ -34,6 +34,7 @@ public class FilmsController : Controller
     [HttpPost]
     public async Task<IActionResult> Create([FromForm] CreateFilmDto filmDto)
     {
+        
         var request = new Film()
         {
             Name = filmDto.Name,
@@ -98,7 +99,6 @@ public class FilmsController : Controller
             Director = x.Director,
             Name = x.Name,
             Duration = x.Duration,
-            Trailer = x.Trailer,
             CreateDate = x.CreateDate,
             GenreName = x.Genre.Name,
 
@@ -118,6 +118,7 @@ public class FilmsController : Controller
             ImagePath = film.ImagePath,
             InTrend = film.InTrend,
             Description = film.Description,
+            Trailer = film.Trailer,
             ProductionCompany = film.ProductionCompany,
             SubtitleLanguage = film.SubtitleLanguage,
             CountryOfOrigin = film.CountryOfOrigin,
@@ -134,15 +135,6 @@ public class FilmsController : Controller
         var genre = await _context.Films.FindAsync(id);
         if(genre == null)
             throw new ExceptionWithStatusCode(HttpStatusCode.NotFound, "Film not found!");
-        if (genre.ImagePath != null)
-        {
-            
-            var rootDirectory = Path.GetFullPath("wwwroot/images");
-            var substring = genre.ImagePath.Substring(8);
-            var path = rootDirectory + substring;
-            System.IO.File.Delete($"{path}");
-        }
-
         _context.Films.Remove(genre);
         await _context.SaveChangesAsync();
         var response = new Response()

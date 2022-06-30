@@ -11,30 +11,6 @@
     <link href="~/assets/css/apps/notes.css" rel="stylesheet" type="text/css"/>
     <link href="~/assets/css/forms/theme-checkbox-radio.css" rel="stylesheet" type="text/css"/>
 </head>
-<body>
-<header/>
-<nav class="navbar navbar-expand-sm navbar-toggleable-sm navbar-light bg-white border-bottom box-shadow mb-3">
-<div class="container-fluid">
-<a class="navbar-brand" asp-area="" asp-controller="Home" asp-action="Index">Kino</a>
-<button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target=".navbar-collapse" aria-controls="navbarSupportedContent"
-        aria-expanded="false" aria-label="Toggle navigation">
-    <span class="navbar-toggler-icon"></span>
-</button>
-<div class="navbar-collapse collapse d-sm-inline-flex justify-content-between">
-<ul class="navbar-nav flex-grow-1">
-    <li class="nav-item">
-        <a class="nav-link text-dark" asp-area="" asp-controller="Home" asp-action="Index">Home</a>
-    </li>
-    <li class="nav-item">
-        <a class="nav-link text-dark" asp-area="" asp-controller="Auth" asp-action="Login">Login</a>
-    </li>
-    <li class="nav-item">
-        <a class="nav-link text-dark" asp-area="" asp-controller="Genres" asp-action="GetAll">Жанры</a>
-    </li>
-    <li class="nav-item">
-        <a class="nav-link text-dark" asp-area="" asp-controller="Home" asp-action="Privacy">Privacy</a>
-    </li>
-</ul>
 <body class="alt-menu sidebar-noneoverflow">
 <div class="header-container fixed-top">
     <header class="header navbar navbar-expand-sm expand-header">
@@ -249,15 +225,9 @@
                 <div class="page-title">
                 </div>
             </div>
-            <!-- CONTENT AREA -->
-            <div class="container">
                 <main role="main">
                     @RenderBody()
                 </main>
-            </div>
-
-
-            <!-- CONTENT AREA -->
         </div>
     </div>
 </div>
@@ -274,6 +244,5 @@
 <script src="~/assets/js/custom.js"></script>
 <script src="~/assets/js/ie11fix/fn.fix-padStart.js"></script>
 <script src="~/assets/js/apps/notes.js"></script>
-</body></div></div></nav>
 </body>
 </html>

@@ -1,6 +1,5 @@
 using Kino.Common.IService;
 using Kino.Extensions;
-using Kino.Middlewares;
 using Kino.Models;
 using Kino.Service;
 

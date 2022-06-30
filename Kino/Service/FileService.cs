@@ -10,7 +10,7 @@ public class FileService  : IFileService
         
       //  var rootDirectory = Environment.GetEnvironmentVariable("WebRootPath")!;
       
-      var rootDirectory = Path.GetFullPath("wwwroot/images/");
+      var rootDirectory = Path.GetFullPath("/home/payrav/Projects/GoKino/gokino.backend/GoKino/wwwroot/images/");
         var fileDirectory = Path.Combine(rootDirectory, dir);
         if (!Directory.Exists(fileDirectory))
             Directory.CreateDirectory(fileDirectory);
@@ -24,7 +24,7 @@ public class FileService  : IFileService
             await using var fs = new FileStream(filePath, FileMode.Create);
         
             await f.CopyToAsync(fs);
-            return Path.Combine("/storage",dir, fileName);
+            return Path.Combine("/storage",dir,fileName);
         }
 
         return null;
