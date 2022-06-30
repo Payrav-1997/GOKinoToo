@@ -1,0 +1,89 @@
+@model Kino.Models.Dtos.Film.CreateFilmDto
+
+@{
+    Layout = "_Layout";
+}
+
+<!DOCTYPE html>
+<html>
+<body>
+<h1>Добавление фильма</h1>
+<form asp-controller="Films" asp-action="Create" method="post" enctype="multipart/form-data">
+
+    <div class="form-group mb-1">
+        <label asp-for="Name">Наименование фильма</label>
+        <input asp-for="Name" type="text" class="form-control" id="name" aria-describedby="name" placeholder="Наименование фильма">
+        <span asp-validation-for="Name" class="text-danger"></span>
+    </div>
+    <div class="form-group mb-1">
+        <label asp-for="Trailer">Trailer</label>
+        <input asp-for="Trailer" type="url" class="form-control" id="Trailer" placeholder="Trailer">
+        <span asp-validation-for="Trailer" class="text-danger"></span>
+    </div>
+    <label >Жанр</label>
+    <select asp-for="GenreId" class="form-control  basic">
+        @foreach (var g in Model.Genres)
+        {
+            <option value="@g.Id" selected="selected">@g.Name</option>
+        }
+    </select>
+
+    <div class="form-group mb-1">
+        <label asp-for="Description">Описание</label>
+        <input asp-for="Description" type="text" class="form-control" id="Description" placeholder="Описание">
+        <span asp-validation-for="Description" class="text-danger"></span>
+    </div>
+    <div class="form-group mb-4">
+        <label asp-for="Director">Продюсер</label>
+        <input type="text" class="form-control" id="Director" placeholder="Продюсер">
+        <span asp-validation-for="Director" class="text-danger"></span>
+    </div>
+    <div class="form-group mb-4">
+        <label asp-for="Duration">Продолжительность</label>
+        <input asp-for="Duration" type="text" class="form-control" id="Duration" placeholder="Продолжительность">
+        <span asp-validation-for="Duration" class="text-danger"></span>
+    </div>
+    <div class="form-group mb-4">
+        <label asp-for="ProductionCompany">Название компании</label>
+        <input asp-for="ProductionCompany" type="text" class="form-control" id="ProductionCompany" placeholder="Компания">
+        <span asp-validation-for="ProductionCompany" class="text-danger"></span>
+    </div>
+    <div class="custom-control custom-radio custom-control-inline">
+        <input asp-for="InTrend" type="checkbox" id="customRadioInline1" name="InTrend" class="custom-control-input">
+        <label class="custom-control-label" for="customRadioInline1">В тренде</label>
+    </div>
+    <div class="form-group mb-4">
+        <label asp-for="SubtitleLanguage">Язык</label>
+        <input asp-for="SubtitleLanguage" type="text" class="form-control" id="SubtitleLanguage" placeholder="Язык">
+        <span asp-validation-for="SubtitleLanguage" class="text-danger"></span>
+    </div>
+    <div class="form-group mb-4">
+        <label asp-for="CountryOfOrigin">Страна происхождения</label>
+        <input asp-for="CountryOfOrigin" type="text" class="form-control" id="CountryOfOrigin" placeholder="Страна">
+        <span asp-validation-for="CountryOfOrigin" class="text-danger"></span>
+    </div>
+    <div class="form-group mb-4">
+        <label asp-for="IMDBRating">Жанр по версии IMDB</label>
+        <input asp-for="IMDBRating" type="number" class="form-control" id="IMDBRating" placeholder="IMDB">
+        <span asp-validation-for="IMDBRating" class="text-danger"></span>
+    </div>
+    <div class="form-group mb-4">
+        <label asp-for="MPAARating">MPAA</label>
+        <input asp-for="MPAARating" type="text" class="form-control" id="MPAARating" placeholder="+18">
+        <span asp-validation-for="MPAARating" class="text-danger"></span>
+    </div>
+    <div class="form-group mb-4">
+        <label asp-for="Image">Файл</label>
+        <input type="file" class="form-control" asp-for="Image">
+    </div>
+
+    <button type="submit" class="btn btn-primary mt-3">Добавить</button>
+</form>
+</body>
+</html>
+
+<script>
+const ss = $(".basic").select2({
+    tags: true,
+}); 
+</script>

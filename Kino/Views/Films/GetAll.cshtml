@@ -1,0 +1,49 @@
+@model System.Collections.Generic.List<Kino.Models.Dtos.Film.GetListFilmDto>
+
+@{
+    Layout = "_Layout";
+}
+
+<div class="table-responsive">
+    <table class="table table-bordered mb-3">
+        <a asp-controller="Films" asp-action="Create" class="btn btn-primary btn-block mb-3 mr-1">Добавить фильм</a>
+        <thead>
+        <tr>
+            <th>Название фильма</th>
+            <th>Продолжительность</th>
+            <th>Трейлер</th>
+            <th>Дата добавление</th>
+            <th class="text-center">Жанр</th>
+            <th class="text-center">Другое</th>
+        </tr>
+        </thead>
+        <tbody>
+
+
+        @foreach (var film in Model)
+        {
+            <tr>
+                <td>@film.Name</td>
+                <td>@film.Duration</td>
+                <td>@film.Trailer</td>
+                <td>@film.CreateDate</td>
+                <td class="text-center">
+                    <span class="badge badge-success">@film.GenreName</span>
+                </td>
+                <td class="text-center">
+                    <div class="dropdown custom-dropdown">
+                        <a class="dropdown-toggle" href="#" role="button" id="dropdownMenuLink1" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+                            <svg height="50px" width="50px"> ... </svg>
+                        </a>
+                        <div class="dropdown-menu" aria-labelledby="dropdownMenuLink1">
+                            <a class="dropdown-item" asp-controller="Films" asp-action="GetById" asp-route-id="@film.Id">Подробно</a>
+                            <a class="dropdown-item" style="color: red" asp-controller="Films" asp-action="Delete" asp-route-id="@film.Id">Удалить</a>
+                            <a class="dropdown-item" href="javascript:void(0);">Delete</a>
+                        </div>
+                    </div>
+                </td>
+            </tr>
+        }
+        </tbody>
+    </table>
+</div>

@@ -1,0 +1,22 @@
+@model Kino.Models.Dtos.Film.GetListFilmDto
+
+@{
+    Layout = "_Layout";
+}
+
+<div >
+    <div class="card-body">
+        <div class="user-profile" style="text-align: center">
+            <img width="600" height="400" src="@Model.ImagePath" class="" alt="...">
+        </div>
+        <div class="user-info" style="text-align: center">
+            <h5 class="card-user_name">@Model.ProductionCompany</h5>
+            <p class="card-user_occupation">@Model.SubtitleLanguage</p>
+            <p class="card-user_occupation">@Model.CountryOfOrigin</p>
+            <div class="card-star_rating">
+                <span class="badge badge-primary">@Model.IMDBRating</span>
+            </div>
+            <p class="card-text">@Model.Description </p>
+        </div>
+    </div>
+</div>

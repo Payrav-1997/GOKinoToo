@@ -1,0 +1,46 @@
+﻿@model Kino.Models.Dtos.Genre.GetGenreDto
+
+  @{
+      Layout = "_Layout";
+  }
+<br />
+<h5 class="text-white">Подробно о книге</h5>
+<div class="good" style="border: 1px solid #fff; border-radius: 10px;">
+    
+    
+        <div class="card-body">
+            
+                <div class="row">
+                    <div class="col-md-4">
+
+                        <img src="@Url.Content(Model.ImagePath)" type="jpg/mpeg" id="@Model.Id" style=" height:400px;width:280px; align-items:center;" class="img-thumbnail"/>
+
+                    </div>
+                    <div class="col-md">
+                        <div class="">
+                            <span style="font-size: 26px; color: rgb(94,187,241);" class="bold-text">@Model.Name</span> <br />
+                            <span class="bold-text text"></span><div class="text text-black">@Model.CreateDate</div><br />
+                        </div>
+                    </div>
+                </div>
+            
+       
+
+    </div>
+</div>
+
+<style>
+body{
+    color:wheat;
+}
+    .good {
+        width: 900px
+    }
+    .bold-text {
+        font-weight: bold;
+        font-size: 18px
+    }
+    span{
+        color:white;
+    }
+</style>
